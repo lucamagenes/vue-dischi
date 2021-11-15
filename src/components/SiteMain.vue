@@ -18,6 +18,6 @@ export default {
 @import "../assets/scss/common.scss";
 
 main {
-  background-color: $main-color-brand;
+  color: $text-primary-color;
 }
 </style>

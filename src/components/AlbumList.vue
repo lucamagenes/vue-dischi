@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" v-if="!loading">
       <div class="col-md-2" v-for="album in albums" :key="album.poster">
         <div class="albums text-center">
           <img :src="album.poster" :alt="album.author" class="img-fluid" />
@@ -10,6 +10,7 @@
         </div>
       </div>
     </div>
+    <div class="loading text-center pt-5" v-else>Loading ...</div>
   </div>
 </template>
 
@@ -20,18 +21,26 @@ export default {
   data() {
     return {
       albums: [],
+      loading: true,
+      error: "",
     };
   },
   mounted() {
-    axios
-      .get("https://flynn.boolean.careers/exercises/api/array/music")
-      .then((r) => {
-        console.log(r.data.response);
-        this.albums = r.data.response;
-      })
-      .catch((e) => {
-        console.log(e, "OPS!");
-      });
+    setTimeout(this.callApi, 3000);
+  },
+  methods: {
+    callApi() {
+      axios
+        .get("https://flynn.boolean.careers/exercises/api/array/music")
+        .then((r) => {
+          console.log(r.data.response);
+          this.albums = r.data.response;
+          this.loading = false;
+        })
+        .catch((e) => {
+          console.log(e, "OPS!");
+        });
+    },
   },
 };
 </script>

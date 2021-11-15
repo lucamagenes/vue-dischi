@@ -14,5 +14,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "../assets/scss/common.scss";
+
+main {
+  background-color: $main-color-brand;
+}
 </style>

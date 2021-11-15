@@ -36,5 +36,25 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "../assets/scss/common.scss";
+
+.row {
+  padding-top: 5rem;
+
+  .albums {
+    background-color: $secondary-color-brand;
+    color: $text-secondary-color;
+    padding: 1rem;
+    height: 370px;
+    margin-bottom: 1rem;
+    h3 {
+      color: $text-primary-color;
+      margin-top: 1rem;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
 </style>

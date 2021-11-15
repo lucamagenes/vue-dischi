@@ -1,17 +1,17 @@
 <template>
-  <footer>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia omnis sint
-      facilis deleniti eum adipisci laborum ipsa fuga odit tenetur corporis
-      alias, soluta accusamus consectetur molestias atque repellat voluptatibus,
-      vel, maiores et vero ea! Reprehenderit architecto ad, numquam, dolore sint
-      expedita totam explicabo modi quam dolor asperiores. Minima, nostrum a!
-    </p>
-  </footer>
+  <main>
+    <AlbumList />
+  </main>
 </template>
 
 <script>
-export default {};
+import AlbumList from "./AlbumList.vue";
+
+export default {
+  components: {
+    AlbumList,
+  },
+};
 </script>
 
 <style>

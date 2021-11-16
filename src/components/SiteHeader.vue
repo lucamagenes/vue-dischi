@@ -1,7 +1,9 @@
 <template>
   <header>
-    <div class="logo">
-      <img src="../assets/Spotify_logo_without_text.svg" alt="" />
+    <div class="container">
+      <div class="logo">
+        <img src="../assets/Spotify_logo_without_text.svg" alt="" />
+      </div>
     </div>
   </header>
 </template>
@@ -13,12 +15,15 @@ export default {};
 <style lang='scss'>
 @import "../assets/scss/common.scss";
 
-.logo {
-  width: 100%;
-  padding: 1rem 2rem;
+header {
   background-color: $secondary-color-brand;
-  img {
-    height: 40px;
+
+  .logo {
+    width: 100%;
+    padding: 1rem 0;
+    img {
+      height: 40px;
+    }
   }
 }
 </style>

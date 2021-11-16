@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container d-flex">
     <SelectBox @filter-genere="selectByGenere" />
-    <div class="row justify-content-center" v-if="!loading">
+    <div class="row justify-content-start" v-if="!loading">
       <div
-        class="col-md-2"
+        class="col-md-3"
         v-for="album in getFilteredGenere"
         :key="album.poster"
       >
@@ -81,8 +81,8 @@ export default {
     background-color: $secondary-color-brand;
     color: $text-secondary-color;
     padding: 1rem;
-    height: 370px;
-    margin-bottom: 1rem;
+    height: 440px;
+    margin-bottom: 1.5rem;
     h3 {
       color: $text-primary-color;
       margin-top: 1rem;

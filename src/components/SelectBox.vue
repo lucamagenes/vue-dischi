@@ -1,6 +1,6 @@
 <template>
   <div class="selectBox">
-    <div class="mb-3">
+    <div class="filterGenres">
       <label for="" class="form-label">Filtra per genere</label>
       <select
         class="form-control"
@@ -35,4 +35,12 @@ export default {
 </script>
 
 <style lang="scss">
+.selectBox {
+  margin-right: 4rem;
+  margin-top: 5rem;
+
+  .filterGenres {
+    width: 130px;
+  }
+}
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <SelectBox />
     <div class="row justify-content-center" v-if="!loading">
       <div class="col-md-2" v-for="album in albums" :key="album.poster">
         <div class="albums text-center">
@@ -16,8 +17,12 @@
 
 <script>
 import axios from "axios";
+import SelectBox from "./SelectBox.vue";
 
 export default {
+  components: {
+    SelectBox,
+  },
   data() {
     return {
       albums: [],
@@ -26,7 +31,7 @@ export default {
     };
   },
   mounted() {
-    setTimeout(this.callApi, 3000);
+    setTimeout(this.callApi, 1000);
   },
   methods: {
     callApi() {

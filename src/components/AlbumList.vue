@@ -1,8 +1,12 @@
 <template>
   <div class="container">
-    <SelectBox />
+    <SelectBox @filter-genere="selectByGenere" />
     <div class="row justify-content-center" v-if="!loading">
-      <div class="col-md-2" v-for="album in albums" :key="album.poster">
+      <div
+        class="col-md-2"
+        v-for="album in getFilteredGenere"
+        :key="album.poster"
+      >
         <div class="albums text-center">
           <img :src="album.poster" :alt="album.author" class="img-fluid" />
           <h3>{{ album.title }}</h3>
@@ -28,6 +32,7 @@ export default {
       albums: [],
       loading: true,
       error: "",
+      musicGenre: "",
     };
   },
   mounted() {
@@ -45,6 +50,22 @@ export default {
         .catch((e) => {
           console.log(e, "OPS!");
         });
+    },
+    selectByGenere(genre) {
+      console.log(genre);
+
+      this.musicGenre = genre;
+    },
+  },
+  computed: {
+    getFilteredGenere() {
+      if (this.musicGenre === "Tutti") {
+        return this.albums;
+      }
+      const filteredGenres = this.albums.filter((album) => {
+        return album.genre.includes(this.musicGenre);
+      });
+      return filteredGenres;
     },
   },
 };
